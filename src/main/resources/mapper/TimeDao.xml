@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mysql.dao.TimeReadDao" >
+    <select id="selectDate" resultType="java.util.Date">
+        select
+        date1
+        from test_time limit 1
+    </select>
+
+    <select id="selectDate2" resultType="java.sql.Date">
+        select
+        date1
+        from test_time limit 1
+    </select>
+
+    <select id="stringDate" resultType="String">
+        select
+        date1
+        from test_time limit 1
+    </select>
+
+    <select id="stringDatetime" resultType="String">
+        select
+        test_time.date_time
+        from test_time limit 1
+    </select>
+
+    <select id="stringTimestamp" resultType="String">
+        select
+        time_stamp
+        from test_time
+        limit 1
+    </select>
+
+    <select id="stringYear" resultType="String">
+        select
+        test_time.year1
+        from test_time
+        limit 1
+    </select>
+
+    <select id="stringTime" resultType="String">
+        select
+        test_time.time1
+        from test_time
+        limit 1
+    </select>
+
+    <select id="sqlTime" resultType="java.sql.Time">
+        select
+        test_time.time1
+        from test_time
+        limit 1
+    </select>
+
+    <select id="timerTime" resultType="java.util.Timer">
+        select
+        test_time.time1
+        from
+        test_time
+        limit 1
+    </select>
+
+    <select id="sqlTimestamp" resultType="java.sql.Timestamp">
+        select
+        test_time.time_stamp
+        from
+        test_time
+        limit 1
+    </select>
+
+    <select id="javaTimestamp" resultType="com.sun.jmx.snmp.Timestamp">
+        select
+        test_time.time_stamp
+        from test_time
+        limit 1
+    </select>
+
+    <select id="utilTimestamp" resultType="java.util.Date">
+        select test_time.time_stamp
+        from
+        test_time
+        limit 1
+    </select>
+    <select id="utilDateDateTime" resultType="java.util.Date">
+        select test_time.date_time
+        from
+        test_time
+        limit 1
+    </select>
+
+    <select id="sqlDateDatetime" resultType="java.sql.Date">
+        select test_time.date_time
+        from test_time
+        limit 1
+    </select>
+
+</mapper>
