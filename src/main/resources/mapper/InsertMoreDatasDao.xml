@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mysql.dao.InsertMoreDatasDao" >
+
+    <insert id="insertUserInfoDao">
+        insert into user_info
+        (user_name, create_time,update_time,password,
+        phone,email,deparment,id_num,real_name,role_name,
+        type,status)
+        values
+        (#{userName},#{createTime},#{updateTime},#{pass},
+        #{phone},#{email},#{department},#{idNum},#{realName},
+        #{roleName},#{type},#{status});
+
+    </insert>
+
+    <insert id="insertUserInfosXmlDao" parameterType="com.example.mysql.mod.UserInfo">
+        insert into user_info
+        (user_name, create_time, update_time,password,
+        phone,email,deparment,id_num,real_name,role_name,
+        type,status)
+        values
+        <foreach collection="list" item="item" separator="," index="index">
+            (#{item.userName},#{item.createTime},#{item.updateTime},
+            #{item.pass},#{item.phone},#{item.email},#{item.department},
+            #{item.idNum},#{item.realName},#{item.roleName},#{item.type},
+            #{item.status})
+        </foreach>
+
+    </insert>
+</mapper>
